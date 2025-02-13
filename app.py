@@ -5,6 +5,7 @@ from models import db, User, Passenger
 from forms import RegistrationForm, LoginForm
 from config import Config
 import pandas as pd
+import os
 
 # Initialize extensions (without app binding)
 bcrypt = Bcrypt()
@@ -100,3 +101,9 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()  # Ensure database tables are created
     app.run(debug=True)
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Default to 5000 locally
+    app.run(host="0.0.0.0", port=port)
+
+
