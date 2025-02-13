@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+data/  # If you don't want large datasets inside the image
